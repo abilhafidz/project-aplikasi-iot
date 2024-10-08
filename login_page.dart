@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'register_page.dart'; // Import halaman Register
-import 'dashboard.dart'; // Import halaman Dashboard
+import 'register_page.dart'; 
+import 'dashboard.dart'; 
 
 class LoginPage extends StatefulWidget {
   @override
@@ -8,21 +8,21 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool _obscureText = true; // Variabel untuk menyimpan status visibility password
-  bool _isHovered = false; // Variabel untuk menyimpan status hover tombol
+  bool _obscureText = true; 
+  bool _isHovered = false; 
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  // Cek apakah input username dan password terisi
+  
   bool get _isInputFilled => _usernameController.text.isNotEmpty && _passwordController.text.isNotEmpty;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF58403B), // Warna latar belakang sesuai dengan gambar
+      backgroundColor: Color(0xFF58403B), 
       body: Stack(
         children: [
-          // Hiasan di pojok atas kanan
+         
           Positioned(
             top: 0,
             right: 0,
@@ -30,14 +30,14 @@ class _LoginPageState extends State<LoginPage> {
               width: 187,
               height: 47,
               decoration: BoxDecoration(
-                color: Color(0xFFE5C6B6), // Warna hiasan
+                color: Color(0xFFE5C6B6), 
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(50), // Radius untuk pojok bawah kiri
+                  bottomLeft: Radius.circular(50), 
                 ),
               ),
             ),
           ),
-          // Hiasan di pojok bawah kiri
+          
           Positioned(
             bottom: 0,
             left: 0,
@@ -45,26 +45,26 @@ class _LoginPageState extends State<LoginPage> {
               width: 187,
               height: 47,
               decoration: BoxDecoration(
-                color: Color(0xFFE5C6B6), // Warna hiasan
+                color: Color(0xFFE5C6B6), 
                 borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(50), // Radius untuk pojok atas kanan
+                  topRight: Radius.circular(50), 
                 ),
               ),
             ),
           ),
-          // Konten utama
+          
           Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0), // Padding di sekitar form
+              padding: const EdgeInsets.symmetric(horizontal: 24.0), 
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Logo Smart Home
+                  
                   Image.asset(
                     'assets/images/logo_rumah.png',
-                    height: 150, // Atur ukuran logo
+                    height: 150, 
                   ),
-                  SizedBox(height: 20), // Jarak antara logo dan teks
+                  SizedBox(height: 20), 
                   Text(
                     'SMART HOME',
                     style: TextStyle(
@@ -73,23 +73,23 @@ class _LoginPageState extends State<LoginPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 40), // Jarak antara teks dan form
-                  // Card untuk input dan tombol
+                  SizedBox(height: 40), 
+                  
                   Card(
-                    color: Color(0xFFFAE7D7), // Warna latar belakang card
+                    color: Color(0xFFFAE7D7), 
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.0), // Sudut card
+                      borderRadius: BorderRadius.circular(16.0), 
                     ),
-                    elevation: 4, // Bayangan card
+                    elevation: 4, 
                     child: Padding(
-                      padding: const EdgeInsets.all(24.0), // Padding di dalam card
+                      padding: const EdgeInsets.all(24.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          // Input Username dengan garis stroke
+                          
                           Container(
                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black54), // Garis stroke
+                              border: Border.all(color: Colors.black54), 
                               borderRadius: BorderRadius.circular(8),
                               color: Colors.white,
                             ),
@@ -98,20 +98,20 @@ class _LoginPageState extends State<LoginPage> {
                               style: TextStyle(color: Colors.black),
                               decoration: InputDecoration(
                                 hintText: 'username',
-                                hintStyle: TextStyle(color: Colors.black54), // Warna hint text
-                                border: InputBorder.none, // Tanpa garis tepi
-                                contentPadding: EdgeInsets.all(12), // Padding di dalam input
+                                hintStyle: TextStyle(color: Colors.black54), 
+                                border: InputBorder.none, 
+                                contentPadding: EdgeInsets.all(12),
                               ),
                               onChanged: (value) {
-                                setState(() {}); // Update tampilan saat isi berubah
+                                setState(() {}); 
                               },
                             ),
                           ),
-                          SizedBox(height: 20), // Jarak antara input username dan password
-                          // Input Password dengan garis stroke
+                          SizedBox(height: 20), 
+                          
                           Container(
                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black54), // Garis stroke
+                              border: Border.all(color: Colors.black54), 
                               borderRadius: BorderRadius.circular(8),
                               color: Colors.white,
                             ),
@@ -121,9 +121,9 @@ class _LoginPageState extends State<LoginPage> {
                               style: TextStyle(color: Colors.black),
                               decoration: InputDecoration(
                                 hintText: 'password',
-                                hintStyle: TextStyle(color: Colors.black54), // Warna hint text
-                                border: InputBorder.none, // Tanpa garis tepi
-                                contentPadding: EdgeInsets.all(12), // Padding di dalam input
+                                hintStyle: TextStyle(color: Colors.black54),
+                                border: InputBorder.none, 
+                                contentPadding: EdgeInsets.all(12), 
                                 suffixIcon: IconButton(
                                   icon: Icon(
                                     _obscureText ? Icons.visibility : Icons.visibility_off,
@@ -131,26 +131,25 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                   onPressed: () {
                                     setState(() {
-                                      _obscureText = !_obscureText; // Toggle visibility
+                                      _obscureText = !_obscureText; 
                                     });
                                   },
                                 ),
                               ),
                               onChanged: (value) {
-                                setState(() {}); // Update tampilan saat isi berubah
+                                setState(() {}); 
                               },
                             ),
                           ),
-                          SizedBox(height: 30), // Jarak antara input password dan tombol sign in
-                          // Tombol Sign In dengan hover
+                          SizedBox(height: 30), 
+                          
                           GestureDetector(
                             onTap: _isInputFilled ? () {
-                              // Here you can implement your login logic.
-                              // For now, we directly navigate to Dashboard.
+                             
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => DashboardPage(), // Navigasi ke halaman Dashboard
+                                  builder: (context) => DashboardPage(), 
                                 ),
                               );
                             } : null, // Disable button jika input tidak lengkap
@@ -165,30 +164,30 @@ class _LoginPageState extends State<LoginPage> {
                               },
                               child: Container(
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black54), // Garis stroke
+                                  border: Border.all(color: Colors.black54), 
                                   borderRadius: BorderRadius.circular(8),
-                                  color: _isHovered && _isInputFilled ? Color(0xFF4E3B31) : Color(0xFFFAE7D7), // Warna latar belakang
+                                  color: _isHovered && _isInputFilled ? Color(0xFF4E3B31) : Color(0xFFFAE7D7), 
                                 ),
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(vertical: 12, horizontal: 40),
                                   child: Text(
                                     'SIGN IN',
                                     style: TextStyle(
-                                      color: _isHovered && _isInputFilled ? Colors.white : Colors.black, // Warna teks tombol
+                                      color: _isHovered && _isInputFilled ? Colors.white : Colors.black, 
                                     ),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(height: 20), // Jarak antara tombol sign in dan teks pendaftaran
+                          SizedBox(height: 20), 
                           // Teks untuk pendaftaran
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => RegisterPage(), // Navigasi ke halaman Register
+                                  builder: (context) => RegisterPage(), 
                                 ),
                               );
                             },
@@ -197,7 +196,7 @@ class _LoginPageState extends State<LoginPage> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 14,
-                                decoration: TextDecoration.underline, // Garis bawah pada teks
+                                decoration: TextDecoration.underline, 
                               ),
                             ),
                           ),
